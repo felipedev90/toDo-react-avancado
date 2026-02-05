@@ -1,16 +1,58 @@
-# React + Vite
+# todo-react-avancado
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de **Todo List** desenvolvida com React, com foco em recursos avançados: **Hooks**, **Hook customizado**, **Context API** e **Memoization**.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Adicionar uma nova tarefa
+- Marcar tarefa como concluída
+- Remover tarefa
+- Filtrar tarefas: **todas**, **concluídas** e **pendentes**
+- Persistência no **localStorage** (mantém as tarefas após recarregar a página)
 
-## React Compiler
+## Tecnologias e conceitos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** + **Vite**
+- **Tailwind CSS** (estilização)
+- **Hooks**: `useState`, `useEffect`
+- **Context API**: `createContext`, `useContext`
+- **Hook customizado**: `useLocalStorageState` (persistência)
+- **Memoization**: `useMemo`, `React.memo`, `useCallback`
 
-## Expanding the ESLint configuration
+## Estrutura de pastas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```txt
+src/
+  components/
+    Header.jsx
+    Todo.jsx
+    TodoFilters.jsx
+    TodoForm.jsx
+  context/
+    TodoContext.js
+    TodoProvider.jsx
+    useTodos.js
+  hooks/
+    useLocalStorageState.js
+  App.jsx
+  main.jsx
+```
+
+## Como rodar localmente
+
+Pré-requisitos
+
+- Node.js (recomendado: v18+)
+- npm
+
+Passos
+
+- npm install
+- npm run dev
+
+A aplicação ficará disponível no endereço mostrado no terminal (geralmente http://localhost:5173).
+
+## Observações
+
+- As tarefas são salvas no localStorage usando a chave "todos".
+- O estado global (tarefas e filtro) é gerenciado via Context API para evitar prop drilling e centralizar regras.
