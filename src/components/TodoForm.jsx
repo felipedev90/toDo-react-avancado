@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTodo } from "../context/useTodos";
 
 export function TodoForm() {
-  const { handleAddTodo } = useTodo();
+  const { addTodo } = useTodo();
   const [text, setText] = useState("");
 
   function handleChange(e) {
@@ -12,7 +12,7 @@ export function TodoForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    handleAddTodo(text);
+    addTodo(text);
     setText("");
   }
 

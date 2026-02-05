@@ -1,3 +1,4 @@
+import { Footer } from "./components/Footer.jsx";
 import { Header } from "./components/Header.jsx";
 import { Todo } from "./components/Todo.jsx";
 import { TodoFilters } from "./components/TodoFilters.jsx";
@@ -11,6 +12,7 @@ function App() {
         <TodoFilters />
         <Todo />
         <TodoForm />
+        <Footer />
       </div>
     </div>
   );
